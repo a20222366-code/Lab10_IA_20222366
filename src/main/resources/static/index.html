@@ -46,6 +46,11 @@ donde estara la pecera, Nemo y Dory -->
             <button onclick="sumarDory()">Dory vio un pez</button>
         </div>
     </div>
+
+    <!-- Creamos un contenedor donde se mostrarán las burbujas que aparecerán en la parte superior de la pecera.
+    El id burbujas permite identificar este espacio desde JavaScript para crear, organizar y controlar las burbujas mediante Drag and Drop -->
+
+    <div id="burbujas"></div>
 </div>
 
 <!-- Conecta el archivo JavaScript encargado de crear y organizar las celdas de la pecera -->
@@ -53,5 +58,9 @@ donde estara la pecera, Nemo y Dory -->
 
 <!-- Conecta el archivo JavaScript que se encargará de controlar los contadores de Nemo y Dory -->
 <script src="js/contadores.js"></script>
+
+<!-- Conecta el archivo JavaScript encargado de crear las burbujas y controlar su funcionamiento mediante la API Drag and Drop,
+permitiendo arrastrarlas y soltarlas en la zona correspondiente de Nemo o Dory -->
+<script src="js/burbujas.js"></script>
 </body>
 </html>

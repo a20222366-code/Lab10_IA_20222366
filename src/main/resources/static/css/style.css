@@ -138,3 +138,107 @@
     border-radius: 8px;
 
 }
+
+
+/* Selecciona el contenedor donde se mostrarán las burbujas */
+#burbujas {
+
+    /* Permite posicionar las burbujas de manera absoluta
+       tomando como referencia el contenedor acuario */
+    position: absolute;
+
+    /* Coloca el contenedor a 0 píxeles desde la parte superior */
+    top: 0;
+
+    /* Coloca el contenedor a 0 píxeles desde el lado izquierdo */
+    left: 0;
+
+    /* Hace que ocupe el 100% del ancho disponible del acuario */
+    width: 100%;
+
+    /* Hace que ocupe el 100% de la altura del acuario */
+    height: 100%;
+
+    /* Evita que el contenedor interfiera con los eventos del ratón,
+       permitiendo interactuar con los elementos que están debajo */
+    pointer-events: none;
+
+}
+
+
+/* Selecciona todos los elementos que tienen la clase "burbuja" */
+.burbuja {
+
+    /* Permite posicionar cada burbuja de manera absoluta
+       dentro del contenedor burbujas */
+    position: absolute;
+
+    /* Coloca inicialmente la burbuja a 0 píxeles desde la parte superior */
+    top: 0;
+
+    /* Establece un ancho de 40 píxeles para cada burbuja */
+    width: 40px;
+
+    /* Establece una altura de 40 píxeles para cada burbuja */
+    height: 40px;
+
+    /* Redondea completamente las esquinas para que la burbuja
+       tenga una forma circular */
+    border-radius: 50%;
+
+    /* Agrega un borde blanco de 2 píxeles alrededor de la burbuja */
+    border: 2px solid white;
+
+    /* Hace que el borde esté incluido dentro del tamaño
+       establecido para la burbuja */
+    box-sizing: border-box;
+
+    /* Cambia la apariencia del cursor a una mano que indica
+       que la burbuja se puede agarrar y arrastrar */
+    cursor: grab;
+
+    /* Permite interactuar con las burbujas mediante el ratón,
+       aunque el contenedor principal tenga pointer-events: none */
+    pointer-events: auto;
+
+    /* Aplica la animación llamada flotar durante 2 segundos,
+       utilizando una transición suave y repitiéndola infinitamente */
+    animation: flotar 2s ease-in-out infinite;
+
+}
+
+
+/* Selecciona las burbujas que pertenecen a Nemo */
+.burbuja-nemo {
+
+    /* Establece el color naranja para las burbujas de Nemo */
+    background-color: orange;
+
+}
+
+
+/* Selecciona las burbujas que pertenecen a Dory */
+.burbuja-dory {
+
+    /* Establece el color azul para las burbujas de Dory */
+    background-color: dodgerblue;
+
+}
+
+
+/* Define una animación llamada "flotar" para las burbujas */
+@keyframes flotar {
+
+    /* Al inicio y al final de la animación,
+       la burbuja mantiene su posición vertical original */
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    /* A la mitad de la animación,
+       la burbuja se desplaza 10 píxeles hacia abajo */
+    50% {
+        transform: translateY(10px);
+    }
+
+}

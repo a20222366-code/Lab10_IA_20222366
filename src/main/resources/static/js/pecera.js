@@ -36,6 +36,4 @@ function crearPecera(x) {
 }
 
 
-
-
 crearPecera(6);
