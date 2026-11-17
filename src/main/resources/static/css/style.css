@@ -1,0 +1,34 @@
+/* Selecciona el elemento que tiene el identificador "pecera" */
+#pecera {
+
+    /* Organiza los elementos que están dentro de la pecera
+       utilizando un sistema de cuadrícula (filas y columnas) */
+    display: grid;
+
+    /* Hace que el ancho de la pecera se ajuste automáticamente
+       al tamaño del contenido que tiene dentro */
+    width: fit-content;
+}
+
+
+/* Selecciona todos los elementos que tienen la clase "celda" */
+.celda {
+
+    /* Establece que cada celda tenga un ancho de 40 píxeles */
+    width: 40px;
+
+    /* Establece que cada celda tenga una altura de 40 píxeles */
+    height: 40px;
+
+    /* Establece el color de fondo de cada celda en azul claro */
+    background-color: lightblue;
+
+    /* Agrega un borde blanco de 1 píxel de grosor
+       alrededor de cada celda */
+    border: 1px solid white;
+
+    /* Hace que el ancho y alto incluyan el borde, evitando que las celdas sean más grandes de 40 x 40 píxeles */
+    box-sizing: border-box;
+
+
+}
