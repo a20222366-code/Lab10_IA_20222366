@@ -8,11 +8,11 @@ function crearPecera(x) {
     // Limpiamos todo el contenido que este dentro del contenedor pecera
     pecera.innerHTML = "";
 
-
-    // Definimos la cantidad de columnas que tendrá nuestra pecera
-    // repeat() repite la cantidad de columnas indicada por x
-    // Cada columna tendrá un ancho de 40 píxeles
-    pecera.style.gridTemplateColumns = "repeat(" + x + ", 40px)";
+    // Definimos la cantidad de columnas de la pecera.
+    // Utilizamos repeat para indicar cuántas columnas queremos crear (x),
+    // 1fr hace que todas compartan el espacio disponible por igual,
+    // adaptando su tamaño según la cantidad de columnas.
+    pecera.style.gridTemplateColumns = "repeat(" + x + ", 1fr)";
 
 
     for (let i = 0; i < x * x; i++) {
@@ -32,7 +32,6 @@ function crearPecera(x) {
         pecera.appendChild(celda);
 
     }
-
 
 }
 

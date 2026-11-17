@@ -1,20 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Pecera</title>
-    <!-- Conectamos el archivo CSS que contiene los estilos y el diseño de la pecera -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 <h1>Pecera</h1>
-<div id="pecera"></div>
 
-<!-- Conectamos el archivo JavaScript que contiene las instrucciones
-     para crear y controlar los elementos de la pecera -->
+<!-- Creamos un contenedor principal llamado acuario
+donde estara la pecera, Nemo y Dory -->
+<div id="acuario">
+
+    <!-- Crea el contenedor donde se mostrarán los cuadritos
+    que forman la pecera -->
+    <div id="pecera"></div>
+
+    <!-- Crea otro contenedor que agrupa a los dos peces -->
+    <div id="peces">
+
+        <!-- Crea un espacio para Nemo.
+        La clase pez-zona permite darle estilos CSS
+        y el id zona-nemo permite identificar su sección -->
+        <div class="pez-zona" id="zona-nemo">
+
+            <!-- Mostramos el emoji de Nemo dentro de un div -->
+            <div class="pez">🐠</div>
+
+            <!-- Mostramos el contador de Nemo, el cual empieza en 0.
+            Utilizamos span porque permite modificar solamente el número desde JavaScript -->
+            <div class="contador">Nemo: <span id="contador-nemo">0</span></div>
+
+            <!-- Crea un botón que, al hacer clic, ejecute la función sumarNemo() -->
+            <button onclick="sumarNemo()">Nemo vio un pez</button>
+
+        </div>
+
+
+
+        <div class="pez-zona" id="zona-dory">
+
+            <!-- Mostramos el emoji de Dory dentro de un div -->
+            <div class="pez">🐟</div>
+            <div class="contador">Dory: <span id="contador-dory">0</span></div>
+            <button onclick="sumarDory()">Dory vio un pez</button>
+        </div>
+    </div>
+</div>
+
+<!-- Conecta el archivo JavaScript encargado de crear y organizar las celdas de la pecera -->
 <script src="js/pecera.js"></script>
 
+<!-- Conecta el archivo JavaScript que se encargará de controlar los contadores de Nemo y Dory -->
+<script src="js/contadores.js"></script>
 </body>
 </html>

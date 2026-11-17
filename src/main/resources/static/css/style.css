@@ -1,34 +1,140 @@
-/* Selecciona el elemento que tiene el identificador "pecera" */
+/* Planteamos :root para declarar variables globales que podemos
+   utilizar en diferentes partes del archivo CSS */
+:root {
+
+    /* Creamos una variable personalizada llamada --agua
+       y le asignamos el color azul claro */
+    --agua: lightblue;
+
+}
+
+
+/* Selecciona el elemento que tiene el id "acuario" */
+#acuario {
+
+    /* Establecemos una posición relativa para que los elementos con posición absoluta
+    dentro de este contenedor tomen al acuario como referencia */
+    position: relative;
+
+    /* Establecemos un ancho de 480 píxeles para el acuario */
+    width: 480px;
+
+}
+
+
+/* Selecciona el elemento que tiene el id "pecera" */
 #pecera {
 
     /* Organiza los elementos que están dentro de la pecera
-       utilizando un sistema de cuadrícula (filas y columnas) */
+       utilizando una cuadrícula (filas y columnas) */
     display: grid;
 
-    /* Hace que el ancho de la pecera se ajuste automáticamente
-       al tamaño del contenido que tiene dentro */
-    width: fit-content;
+    /* Establece que la pecera tenga un ancho de 480 píxeles */
+    width: 480px;
+
 }
 
 
 /* Selecciona todos los elementos que tienen la clase "celda" */
 .celda {
 
-    /* Establece que cada celda tenga un ancho de 40 píxeles */
-    width: 40px;
+    /* Hace que cada celda tenga la misma proporción de ancho y alto,
+       es decir, que cada cuadrito sea cuadrado */
+    aspect-ratio: 1;
 
-    /* Establece que cada celda tenga una altura de 40 píxeles */
-    height: 40px;
+    /* Establece el color de fondo utilizando la variable --agua.
+       Si la variable no está definida, utiliza lightblue como alternativa */
+    background-color: var(--agua, lightblue);
 
-    /* Establece el color de fondo de cada celda en azul claro */
-    background-color: lightblue;
-
-    /* Agrega un borde blanco de 1 píxel de grosor
-       alrededor de cada celda */
+    /* Agrega un borde blanco de 1 píxel alrededor de cada celda */
     border: 1px solid white;
 
-    /* Hace que el ancho y alto incluyan el borde, evitando que las celdas sean más grandes de 40 x 40 píxeles */
+    /* Hace que el borde esté incluido dentro del tamaño
+       establecido para cada celda */
     box-sizing: border-box;
 
+}
+
+
+/* Selecciona el contenedor que agrupa a Nemo y Dory */
+#peces {
+
+    /* Permite posicionar este contenedor de manera absoluta
+       tomando como referencia el acuario */
+    position: absolute;
+
+    /* Coloca el contenedor a 0 píxeles desde la parte superior */
+    top: 0;
+
+    /* Coloca el contenedor a 0 píxeles desde el lado izquierdo */
+    left: 0;
+
+    /* Hace que ocupe el 100% del ancho disponible del acuario */
+    width: 100%;
+
+    /* Hace que ocupe el 100% de la altura del acuario */
+    height: 100%;
+
+    /* Utiliza Flexbox para organizar las zonas de Nemo y Dory
+       una al lado de la otra */
+    display: flex;
+
+}
+
+
+/* Selecciona las zonas individuales de Nemo y Dory */
+.pez-zona {
+
+    /* Hace que cada zona ocupe la misma cantidad de espacio disponible */
+    flex: 1;
+
+    /* Utiliza Flexbox para organizar los elementos de cada zona */
+    display: flex;
+
+    /* Coloca los elementos en dirección vertical,
+       uno debajo del otro */
+    flex-direction: column;
+
+    /* Centra horizontalmente los elementos de cada zona */
+    align-items: center;
+
+    /* Centra verticalmente los elementos de cada zona */
+    justify-content: center;
+
+    /* Establece una separación de 8 píxeles entre los elementos */
+    gap: 8px;
+
+}
+
+
+/* Selecciona los elementos que tienen la clase "pez" */
+.pez {
+
+    /* Establece el tamaño de los peces (emojis) en 64 píxeles */
+    font-size: 64px;
+
+}
+
+
+/* Selecciona los elementos que tienen la clase "contador" */
+.contador {
+
+    /* Establece el tamaño del texto en 20 píxeles */
+    font-size: 20px;
+
+    /* Hace que el texto aparezca en negrita */
+    font-weight: bold;
+
+    /* Establece un fondo blanco detrás del contador */
+    background-color: white;
+
+    /* Agrega espacio interno:
+       4 píxeles arriba y abajo,
+       10 píxeles a la izquierda y derecha */
+    padding: 4px 10px;
+
+    /* Redondea las esquinas del fondo blanco
+       utilizando un radio de 8 píxeles */
+    border-radius: 8px;
 
 }
